@@ -1,10 +1,10 @@
 # React-alert-hook
 
-react-alert-hook, es un hook para ReactJS el cual te permite usar alertas con temporizador y personalizarlas.
+**react-alert-hook** es un hook para ReactJS el cual te permite usar alertas con temporizador y personalizarlas.
 
-## Instalacion
+## Instalación
 
-react-alert-hook actualmente está en beta.
+**react-alert-hook** actualmente está en beta.
 
 ### Con npm
 
@@ -18,15 +18,49 @@ npm install react-alert-hook
 yarn add react-alert-hook
 ```
 
-## Como usarlo
+## Configuración de Alerta
 
-A continuación, se muestra un ejemplo de cómo puedes usar react-alert-hook en tu aplicación React:
+Antes de mostrar una alerta personalizada en tu aplicación, necesitas configurar algunas variables y clases CSS que determinarán cómo se verá la alerta. A continuación, se muestra cómo puedes hacerlo:
+
+```jsx
+// Llamamos a useAlert para obtener las variables necesarias
+const [
+  showAlert,
+  colorAlerta,
+  alertMessage,
+  alertType,
+  position,
+  showAlertMessage,
+] = useAlert();
+
+// Crear una cadena de clases CSS personalizadas para la alerta
+const alertClass = `${alertType} ${position} ${colorAlerta}`;
+```
+
+## Mostrando la Alerta
+
+Para mostrar una alerta personalizada en tu aplicación, necesitas incorporar el siguiente fragmento de código en tu componente de React:
+
+```jsx
+{
+  showAlert && (
+    <div className={alertClass}>
+      <p>{alertMessage}</p>
+    </div>
+  );
+}
+```
+
+## Ejemplo de cómo usarlo
+
+A continuación, se muestra un ejemplo de cómo puedes usar **react-alert-hook** en tu aplicación React:
 
 ```jsx
 import React from "react";
 import useAlert from "react-alert-hook";
 
 function App() {
+  // Llamamos a useAlert para obtener las variables necesarias
   const [
     showAlert,
     colorAlerta,
@@ -35,8 +69,11 @@ function App() {
     position,
     showAlertMessage,
   ] = useAlert();
+
+  // Crear una cadena de clases CSS personalizadas para la alerta
   const alertClass = `${alertType} ${position} ${colorAlerta}`;
 
+  // Definir una función que muestra una alerta personalizada al hacer clic en el botón
   const sayHello = (name) => {
     showAlertMessage(`¡Hola, ${name}!`, "alerta5", "topMiddle", "verde", 1500);
   };
@@ -56,11 +93,11 @@ function App() {
 export default App;
 ```
 
-En este ejemplo, hemos importado useAlert desde react-alert-hook y lo hemos utilizado en un componente de React. Cuando el botón "Decir hola" se hace clic, se llama a showAlertMessage para mostrar una alerta personalizada con un mensaje, tipo de alerta, posición, color específicos y tiempo de duración.
+En este ejemplo, hemos importado **useAlert** desde **react-alert-hook** y lo hemos utilizado en un componente de React. Cuando el botón "Decir hola" se hace clic, se llama a showAlertMessage para mostrar una alerta personalizada con un mensaje, tipo de alerta, posición, color específicos y tiempo de duración.
 
 ## Personalización
 
-Puedes personalizar las alertas en react-alert-hook de la siguiente manera:
+Puedes personalizar las alertas en **react-alert-hook** de la siguiente manera:
 
 ```jsx
 showAlertMessage(mensaje, tipo, posicion, color, tiempo);
@@ -75,6 +112,7 @@ showAlertMessage(mensaje, tipo, posicion, color, tiempo);
 ### Tipos de Alerta
 
 Puedes usar diferentes tipos de alertas especificando el tipo al llamar a showAlertMessage. Por ejemplo, puedes usar:
+
 - `alerta1`
 - `alerta2`
 - `alerta3`
@@ -84,6 +122,7 @@ Puedes usar diferentes tipos de alertas especificando el tipo al llamar a showAl
 ### Posiciones de Alerta
 
 Puedes especificar la posición de la alerta utilizando una de las siguientes opciones:
+
 - `topRight`
 - `topMiddle`
 - `topLeft`
@@ -95,6 +134,7 @@ Puedes especificar la posición de la alerta utilizando una de las siguientes op
 ### Colores de Alerta
 
 Puedes definir colores personalizados para tus alertas utilizando uno de los siguientes colores:
+
 - `verde`
 - `rojo`
 - `naranja`
