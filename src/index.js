@@ -4,12 +4,12 @@ import "./styles.css";
 // Define un objeto AlertPositions que contiene las posibles posiciones de las alertas.
 const AlertPositions = {
   topRight: "top-right",
-  topMiddle: "top-middle",
+  topCenter: "top-center",
   topLeft: "top-left",
   bottomRight: "bottom-right",
-  bottomMiddle: "bottom-middle",
+  bottomCenter: "bottom-center",
   bottomLeft: "bottom-left",
-  middle: "middle",
+  center: "center",
 };
 
 // Hook llamado `useAlert`.
@@ -23,19 +23,12 @@ const useAlert = () => {
     position: AlertPositions.bottomRight, // Posición predeterminada
     timeoutId: null,
   });
-
-
+  
   // Función para renderizar la alerta
   const showAlertMessage = (mensaje, tipo, posicion, color, tiempo = 1500) => {
     if (!mensaje || !tipo || !posicion || !color) {
       // Mostrar una alerta de error, si no se han recibido todos los parámetros necesarios
-      showAlertMessage(
-        "Faltan parámetros requeridos para mostrar la alerta",
-        "alerta5",
-        "topMiddle",
-        "rojo",
-        3000
-      );
+      console.error("Faltan parámetros requeridos para mostrar la alerta");
       return;
     }
 
@@ -63,11 +56,7 @@ const useAlert = () => {
   };
 
   return [
-    alertData.show,
-    alertData.color,
-    alertData.message,
-    alertData.type,
-    alertData.position,
+    alertData,
     showAlertMessage,
     hideAlert,
   ];

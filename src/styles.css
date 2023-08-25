@@ -30,7 +30,7 @@
 .alerta3,
 .alerta4,
 .alerta5 {
-  z-index: 1;
+  z-index: 9999;
   position: fixed;
   transition: opacity 0.3s ease-in-out;
 }
@@ -107,7 +107,7 @@
 
 /* Clases específicas para cada posición */
 
-.middle {
+.center {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -118,7 +118,7 @@
   right: 20px;
 }
 
-.top-middle {
+.top-center {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
@@ -135,7 +135,7 @@
   right: 20px;
 }
 
-.bottom-middle {
+.bottom-center {
   bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
