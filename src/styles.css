@@ -1,0 +1,148 @@
+/*
+   Estilos CSS para alertas y colores personalizados.
+   Fecha de creación: 25/8/2023
+   Autor: EloiDev
+   Descripción: Este archivo contiene estilos para alertas y definiciones de colores personalizados.
+*/
+
+:root {
+  --color-verde: #00c833;
+  --color-amarillo: #f2ff00;
+  --color-naranja: #f9a610;
+  --color-gris: #b3b2b2;
+  --color-rojo: #ff4242;
+  --color-rosa: #ff00bd;
+  --color-celeste: #00faff;
+  --color-azul: #0083ff;
+}
+
+/* Estilos para todos los elementos */
+
+* {
+  padding: 0;
+  margin: 0;
+}
+
+/* Clases para todas las alertas */
+
+.alerta1,
+.alerta2,
+.alerta3,
+.alerta4,
+.alerta5 {
+  z-index: 1;
+  position: fixed;
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Clases específicas para cada alerta */
+
+.alerta1 {
+  padding: 10px;
+  border-radius: 3px;
+  box-shadow: black 5px 5px;
+}
+
+.alerta2 {
+  padding: 20px 35px;
+  border-radius: 10px;
+  font-size: 22px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.alerta3 {
+  padding: 20px;
+  border-radius: 8px;
+  color: #333;
+  font-size: 18px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.alerta4 {
+  padding: 15px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: solid;
+}
+
+.alerta5 {
+  padding: 15px;
+  border-radius: 3px;
+  box-shadow: #e8e8e8 0px 0px 5px 2px;
+}
+
+/* Clases específicas para cada color */
+
+.verde {
+  background-color: var(--color-verde);
+}
+
+.amarillo {
+  background-color: var(--color-amarillo);
+}
+
+.naranja {
+  background-color: var(--color-naranja);
+}
+
+.gris {
+  background-color: var(--color-gris);
+}
+
+.rojo {
+  background-color: var(--color-rojo);
+}
+
+.rosa {
+  background-color: var(--color-rosa);
+}
+
+.celeste {
+  background-color: var(--color-celeste);
+}
+
+.azul {
+  background-color: var(--color-azul);
+}
+
+/* Clases específicas para cada posición */
+
+.middle {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.top-right {
+  top: 20px;
+  right: 20px;
+}
+
+.top-middle {
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+}
+
+.top-left {
+  top: 20px;
+  left: 20px;
+}
+
+.bottom-right {
+  bottom: 20px;
+  right: 20px;
+}
+
+.bottom-middle {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+}
+
+.bottom-left {
+  bottom: 20px;
+  left: 20px;
+}

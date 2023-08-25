@@ -1,0 +1,28 @@
+{
+  "name": "react-alert-hook",
+  "version": "1.0.0",
+  "description": "Alertas para tus páginas web interactivas",
+  "main": "./src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EloiDeveloper/Alerts.git"
+  },
+  "keywords": [
+    "alerta",
+    "alertas",
+    "notificacion",
+    "notificaciones"
+  ],
+  "author": "EloiDev",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EloiDeveloper/react-alert-hook/issues"
+  },
+  "homepage": "https://github.com/EloiDeveloper/react-alert-hook#readme",
+  "dependencies": {
+    "react": "^18.2.0"
+  }
+}
