@@ -24,17 +24,13 @@ Antes de mostrar una alerta personalizada en tu aplicación, necesitas configura
 
 ```jsx
 // Llamamos a useAlert para obtener las variables necesarias
-const [
-  showAlert,
-  colorAlerta,
-  alertMessage,
-  alertType,
-  position,
-  showAlertMessage,
-] = useAlert();
+const [alertData, showAlertMessage] = useAlert();
+
+// Desestructuración de la variable alertData para obtener las propiedades necesarias.
+const { show, message, type, position, color } = alertData;
 
 // Crear una cadena de clases CSS personalizadas para la alerta
-const alertClass = `${alertType} ${position} ${colorAlerta}`;
+const alertClass = `${type} ${position} ${color}`;
 ```
 
 ## Mostrando la Alerta
@@ -43,9 +39,9 @@ Para mostrar una alerta personalizada en tu aplicación, necesitas incorporar el
 
 ```jsx
 {
-  showAlert && (
+  show && (
     <div className={alertClass}>
-      <p>{alertMessage}</p>
+      <p>{message}</p>
     </div>
   );
 }
@@ -61,17 +57,13 @@ import useAlert from "react-alert-hook";
 
 function App() {
   // Llamamos a useAlert para obtener las variables necesarias
-  const [
-    showAlert,
-    colorAlerta,
-    alertMessage,
-    alertType,
-    position,
-    showAlertMessage,
-  ] = useAlert();
+  const [alertData, showAlertMessage] = useAlert();
+
+  // Desestructuración de la variable alertData para obtener las propiedades necesarias.
+  const { show, message, type, position, color } = alertData;
 
   // Crear una cadena de clases CSS personalizadas para la alerta
-  const alertClass = `${alertType} ${position} ${colorAlerta}`;
+  const alertClass = `${type} ${position} ${color}`;
 
   // Definir una función que muestra una alerta personalizada al hacer clic en el botón
   const sayHello = (name) => {
@@ -81,9 +73,9 @@ function App() {
   return (
     <div className="App">
       <button onClick={() => sayHello("EloiDev")}>Decir hola</button>
-      {showAlert && (
+      {show && (
         <div className={alertClass}>
-          <p>{alertMessage}</p>
+          <p>{message}</p>
         </div>
       )}
     </div>
