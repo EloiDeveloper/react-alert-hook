@@ -18,6 +18,10 @@ npm install react-alert-hook
 yarn add react-alert-hook
 ```
 
+## Demo
+
+Aquí te dejo una demo, donde puedes probar y personalizar tus alertas de **react-alert-hook** en https://alert-demo.vercel.app/
+
 ## Configuración de Alerta
 
 Antes de mostrar una alerta personalizada en tu aplicación, necesitas configurar algunas variables y clases CSS que determinarán cómo se verá la alerta. A continuación, se muestra cómo puedes hacerlo:
