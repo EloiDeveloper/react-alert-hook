@@ -1,6 +1,6 @@
 {
   "name": "react-alert-hook",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Alertas para tus páginas web interactivas",
   "main": "./src/index.js",
   "scripts": {
